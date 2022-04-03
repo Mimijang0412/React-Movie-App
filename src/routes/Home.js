@@ -1,39 +1,17 @@
-import { useEffect, useState } from 'react';
-import Movie from '../components/Movie';
+import React, {  useEffect, useState } from 'react';
+import Header from '../components/Header';
+import MovieSlider from '../components/MovieSlider';
+import HeroBanner from '../components/HeroBanner'
 
-function Home() {
-  const [loading, setLoading] = useState(true);
-	const [movies, setMovies] = useState([]);
-	const getMovies = async () => {
-		const json = await (
-			await fetch(
-				`https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year76`
-			)
-		).json();
-		setMovies(json.data.movies);
-		setLoading(false);
-	};
-	useEffect(() => {
-		getMovies();
-	}, []);
+function Home() {	
 	return (
-		<div>
-			{loading ? (
-				<h1>Loading...</h1>
-			) : (
-				<div>
-					{movies.map((movie) => (
-						<Movie 
-              key={movie.id}
-              medium_cover_image={movie.medium_cover_image}
-              title={movie.title} 
-              summary={movie.summary}
-              genres={movie.genres}
-              id={movie.id}
-            />
-					))}
-				</div>
-			)}
+		<div className="bg-black min-h-screen h-full overflow-x-hidden px-12">
+      <Header/>
+      <HeroBanner/>
+      <div className="mt-12 text-white z-10">
+        <MovieSlider categories={'Popular Movies'} min_rating={8}/>
+        <MovieSlider categories={'Less Popular Movies'} min_rating={6}/>
+      </div>
 		</div>
 	);
 }
