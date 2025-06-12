@@ -16,7 +16,7 @@ function MovieSlider({ categories, min_rating }) {
 	};
 	useEffect(() => {
 		getMovies();
-	}, []);
+	}, [min_rating]);
 
 	var settings = {
 		className: 'center',

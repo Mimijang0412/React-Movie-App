@@ -5,12 +5,12 @@ function Movie({ medium_cover_image, title, summary, genres, id }) {
 	return (
 		<div className="px-1">
 			<img src={medium_cover_image} alt={title} />
-			{/* <h2><Link to={`/movie/${id}`}>{title}</Link></h2> */}
-			{/* <p>{summary}</p> */}
+			<h2><Link to={`/movie/${id}`}>{title}</Link></h2>
+			<p>{summary}</p>
 			<ul>
-				{genres.map((g) => {
-					<li key={g}>{g}</li>;
-				})}
+				{genres.map((g) => (
+					<li key={g}>{g}</li>
+        ))}
 			</ul>
 		</div>
 	);
