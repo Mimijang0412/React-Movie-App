@@ -5,17 +5,19 @@ import Movie from '../components/Movie';
 function MovieSlider({ categories, min_rating }) {
 	const [loading, setLoading] = useState(true);
 	const [movies, setMovies] = useState([]);
-	const getMovies = async () => {
-		const json = await (
-			await fetch(
-				`https://yts.mx/api/v2/list_movies.json?minimum_rating=${min_rating}`
-			)
-		).json();
-    
-		setLoading(false);
-		setMovies(json.data.movies);
-	};
+	
 	useEffect(() => {
+    const getMovies = async () => {
+      const json = await (
+        await fetch(
+          `https://yts.mx/api/v2/list_movies.json?minimum_rating=${min_rating}`
+        )
+      ).json();
+      
+      setLoading(false);
+      setMovies(json.data.movies);
+	  };
+
 		getMovies();
 	}, [min_rating]);
 
