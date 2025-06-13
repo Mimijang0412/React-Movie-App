@@ -18,7 +18,7 @@ function Detail() {
     };
 
 		getMovieDetail();
-	}, []);
+	}, [id]);
 
 	return (
     <div>
