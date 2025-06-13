@@ -11,15 +11,15 @@ This is a movie browsing web app built with React, featuring data fetched from t
 ---
 
 ## 🚀 Getting Started
-**Clone the repo**
+## Clone the repo
 git clone https://github.com/Mimijang0412/React-Movie-App.git
 cd React-Movie-App
 
-**Install dependencies**
+## Install dependencies
 npm install
 
-**Start the development server**
+## Start the development server
 npm start
 
 
-API: YTS API
+**API: YTS API**
