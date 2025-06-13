@@ -11,6 +11,7 @@ function MovieSlider({ categories, min_rating }) {
 				`https://yts.mx/api/v2/list_movies.json?minimum_rating=${min_rating}`
 			)
 		).json();
+    
 		setLoading(false);
 		setMovies(json.data.movies);
 	};
@@ -73,6 +74,7 @@ function MovieSlider({ categories, min_rating }) {
 								summary={movie.summary}
 								genres={movie.genres}
 								id={movie.id}
+                year={movie.year}
 							/>
 						))}
 					</Slider>

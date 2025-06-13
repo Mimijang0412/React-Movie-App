@@ -13,7 +13,7 @@ function HeroBanner() {
 			let allMovies = json.data.movies;
 			let random = Math.floor(Math.random() * allMovies.length);
 			setRandomMovie(allMovies[random]);
-			console.log(random, allMovies, randomMovie);
+			// console.log(random, allMovies, randomMovie);
 		};
 
 		getRandomMovies();
